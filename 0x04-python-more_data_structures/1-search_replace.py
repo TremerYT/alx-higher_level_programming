@@ -1,9 +1,15 @@
 #!/usr/bin/python3
-def uniq_add(my_list=[]):
-    list_new = []
-    sum = 0
-    for i in my_list:
-        if num not in list_new:
-            sum +=num
-            list_new.append(num)
-        return sum
+
+
+def search_replace(my_list, search, replace):
+    """
+    A function that replaces all occurrences
+    of an element by another in a new list
+    """
+    new_list = []
+    for element in my_list:
+        if element == search:
+            new_list.append(replace)
+        else:
+            new_list.append(element)
+    return new_list
