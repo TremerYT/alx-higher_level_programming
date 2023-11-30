@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines an integer addition function."""
+"""This function defines an integer addition."""
 
 
 def add_integer(a, b=98):
