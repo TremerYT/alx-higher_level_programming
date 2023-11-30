@@ -1,0 +1,27 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+>>> text_indentation("Hello?")
+Hello?
+
+>>> text_indentation(456)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+text_indentation("""there was a cat in street . \
+Did you see him? Did she say yes? \
+A wise man once said: jeff is awesome. there are many wise men i suppose , becouse they always say: \
+jeff is awesome can u give me some food? actually i love dogs, they are so cute."""")
+there was a cat in street.
+
+Did you see him?
+
+Did she say yes?
+
+A wise man once said:
+
+jeff is awesome.
+
+there are many wise men i suppose , becouse they always say:
+
+jeff is awesome can u give me some food?
+
+actually i love dogs, they are so cute.
