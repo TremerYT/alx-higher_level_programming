@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""s is the Defines a matrix multiplication function."""
+"""This function Defines a matrix multiplication function."""
 
 
 def matrix_mul(m_a, m_b):
