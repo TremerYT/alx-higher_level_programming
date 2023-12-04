@@ -47,3 +47,4 @@ assumes all given values are of type int
     >>> MyList.print_sorted([1, 4, 2, 3, "5"])
     Traceback (most recent call last):
     TypeError: '<' not supported between instances of 'str' and 'int'
+
