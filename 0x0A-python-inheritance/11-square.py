@@ -1,54 +1,68 @@
 #!/usr/bin/python3
-"""inherits from BaseGeometry"""
+""" This module improves Basegeometry and Rectangle classes
+Square class inherits from Rectangle Class
+"""
 
 
 class BaseGeometry:
-    """public instance method"""
+    """ BaseGeometry class """
 
     def area(self):
-        """calculate area"""
+        """ not yet implemented"""
+
         raise Exception("area() is not implemented")
+        return
 
     def integer_validator(self, name, value):
-        """validates value"""
-        x = isinstance(value, int)
-        if not x:
-            raise TypeError("{} must be an integer".format(name))
+        """ validate function """
+
+        if type(value) != int:
+            if type(value) == float:
+                if value % 1 != 0:
+                    raise TypeError(name + " must be an integer")
+            else:
+                raise TypeError(name + " must be an integer")
         if value <= 0:
-            raise ValueError("{} must be greater than 0".format(name))
+            raise ValueError(name + " must be greater than 0")
+        return
 
 
 class Rectangle(BaseGeometry):
-    """class Rectangle inherits from BaseGeometry"""
+    """ Inherits from BaseGeometry class"""
 
     def __init__(self, width, height):
-        """initialization of privates"""
-        self.integer_validator('width', width)
-        self.__width = width
-        self.integer_validator('height', height)
-        self.__height = height
+        """ Construct rectangle """
+
+        self.integer_validator("width", width)
+        self.integer_validator("height", height)
+        self._Rectangle__width = width
+        self._Rectangle__height = height
 
     def area(self):
-        """implementing area"""
-        return self.__width * self.__height
+        return self._Rectangle__width * self._Rectangle__height
 
     def __str__(self):
-        """return a str representation of square"""
-        return '[Rectangle] {}/{}'.format(self.__width, self.__height)
+        return "[Rectangle] " + str(self._Rectangle__width) + "/" +\
+                str(self._Rectangle__height)
 
 
 class Square(Rectangle):
-    """Class Square inherits from Rectangle"""
+    """ Inherits from Rectangle which in turn
+    inherits from BaseGeometry"""
+
     def __init__(self, size):
-        """initializer"""
-        super().__init__(size, size)
-        self.integer_validator('size', size)
-        self.__size = size
+        """ Construct square """
+
+        self.integer_validator("size", size)
+        self._Rectangle__width = size
+        self._Rectangle__height = size
+        self._Square__size = size
 
     def area(self):
-        """area validation for square"""
-        return self.__size * self.__size
+
+        return super().area()
 
     def __str__(self):
-        """return a str representaion of square"""
-        return '[Square] {}/{}'.format(self.__size, self.__size)
+        return "[" + self.__class__.__name__ + "] " +\
+                str(self._Rectangle__width) + "/" +\
+                str(self._Rectangle__height)
