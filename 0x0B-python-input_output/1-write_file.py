@@ -1,0 +1,15 @@
+#!/usr/bin/python3
+"""This defines a file writing function"""
+
+
+def write_file(filename="", text=""):
+    """This writes a string to a text file.
+
+    Args:
+        filename (str): This is the name of the file to write.
+        text (str): This is the text to write to the file.
+    Returns:
+        This returns the number of characters written.
+    """
+    with open(filename, "w", encoding="utf-8") as f:
+        return f.write(text)
