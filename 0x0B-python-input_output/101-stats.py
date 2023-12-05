@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This should Reads from standard input and computes metrics.
+"""Reads from standard input and computes metrics.
 
 After every ten lines or the input of a keyboard interruption (CTRL + C),
 prints the following statistics:
@@ -9,7 +9,7 @@ prints the following statistics:
 
 
 def print_stats(size, status_codes):
-    """This should Print accumulated metrics.
+    """Print accumulated metrics.
 
     Args:
         size (int): The accumulated read file size.
