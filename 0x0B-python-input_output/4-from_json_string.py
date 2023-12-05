@@ -6,4 +6,4 @@ import json
 
 def save_to_json_file(my_obj, filename):
     """This returns the python object rep"""
-     return json.loads(my_str)
+    return json.loads(my_str)
