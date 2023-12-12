@@ -152,7 +152,7 @@ class Rectangle(Base):
         }
 
     def __str__(self):
-        """This return the print() and str() representation of the Rectangle."""
+        """This return the print() and str() rep of the Rectangle."""
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
                                                        self.x, self.y,
                                                        self.width, self.height)
