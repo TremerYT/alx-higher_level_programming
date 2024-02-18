@@ -5,13 +5,13 @@ import sys
 
 
 if __name__ == "__main__":
-    database = MySQLdb.connect(host="localhost", username=sys.argv[1],
-                         password=sys.argv[2], database=sys.argv[3], port=3306)
-    cursor = database.cursor()
+    db = MySQLdb.connect(host="localhost", user=sys.argv[1],
+                         passwd=sys.argv[2], db=sys.argv[3], port=3306)
+    cur = db.cursor()
     match = sys.argv[4]
-    cursor.execute("SELECT * FROM states WHERE name LIKE %s", (match, ))
-    rows = cursor.fetchall()
+    cur.execute("SELECT * FROM states WHERE name LIKE %s", (match, ))
+    rows = cur.fetchall()
     for row in rows:
         print(row)
-    cursor.close()
-    database.close()
+    cur.close()
+    db.close()
